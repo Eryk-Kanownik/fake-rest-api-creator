@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(179, 101, 199);
+    padding: 10px;
+}
+
+.navbar > h2{
+    margin: 0;
+}
+
+.form{
+    display:grid;
+    grid-template-columns: 5vw 95vw;
+}
+
+.fields{
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.add-field{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+    padding: 5px;
+}
+
+.new-form-input{
+    display: flex;
+    gap:3px;
+    align-self:baseline
+}
+
+.scheme-creator{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.616);
+}
