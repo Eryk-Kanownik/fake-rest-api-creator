@@ -7,7 +7,8 @@ const NewFormInput = ({fieldName,del,sDIF}) => {
   }
   return (
     <div className='new-form-input'>
-        <input type="text" placeholder={fieldName} onChange={(e) => onChange(e.target.value)}/>
+        <label htmlFor="input">{fieldName}:</label>
+        <input type="text" id="input" onChange={(e) => onChange(e.target.value)}/>
         <button onClick={() => del(fieldName)}><strong>&times;</strong></button>
     </div>
     

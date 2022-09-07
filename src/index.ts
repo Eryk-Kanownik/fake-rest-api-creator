@@ -1,14 +1,28 @@
 import express, { Express, Request, Response } from 'express' 
+import cors from 'cors'
+
 
 const app:Express = express();
 
-let data:Array<any> = [{msg:"hello"}]
+app.use(cors());
+app.use(express.json());
+
+let data:Array<any> = [{message:"hello"}]
 
 app.get('/get',(req:Request,res:Response) => {
-    res.json({data})
+    res.json(data)
 })
 
-app.post('/add',(req:Request,res:Response) => {
-    
+app.post('/add/object',(req:Request,res:Response) => {
+    let credentials:Array<any> = req.body
+    data.push(credentials);
+    res.json(data)
+
 })
+
+app.post('/add/collection',(req:Request,res:Response) => {
+    data.push(req.body);
+    res.json(data)
+})
+
 app.listen(2000,() => console.log("http://localhost:2000"))
