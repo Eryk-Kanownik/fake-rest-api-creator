@@ -2,8 +2,12 @@ import React from 'react'
 
 const UniversalDataCard = ({data}) => {
   return (
-    <div>
-        {Object.entries(data).map(([key,value]) => `${key} : ${value}`)}
+    <div className='universal-data-card'>
+      <span className='curly-bracket-left'>{"{"}</span>
+        <ul className='udc-list'>
+        {Object.entries(data).map(([key,value]) => <li><span className='key'>"{key}"</span> : <span className='value'>"{value}",</span></li>)}
+        </ul>
+      <span className='curly-bracket-right'>{"}"}</span>
     </div>
   )
 }

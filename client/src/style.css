@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro&display=swap');
 
 *{
     font-family: 'Roboto', sans-serif;
@@ -18,33 +19,65 @@ body{
     padding: 10px;
 }
 
-.navbar > h2{
-    margin: 0;
-}
-
 .form{
     display:grid;
     grid-template-columns: 10vw 90vw;
 }
 
-.fields{
-    display: flex;
-    gap: 5px;
-    margin-top: 5px;
-}
-
-.add-field{
+.options{
     display: flex;
     flex-direction: column;
     gap:3px;
     padding: 5px;
 }
 
+.options > button{
+    padding: 4px 10px;
+    font-size: 15px;
+    border: rgb(128, 128, 128) solid 1px;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.options > button:hover{
+    background-color: black;
+    border: rgb(0, 0, 0) solid 1px;
+    color: white;
+}
+
+.fields{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+}
+
 .new-form-input{
     display: flex;
-    align-items: center;
-    gap:3px;
-    align-self:baseline
+    gap:5px
+}
+
+.new-form-input > input, button{
+    padding: 5px;
+}
+
+.new-form-input > button{
+    padding: 4px 10px;
+    font-size: 15px;
+    border: rgb(128, 128, 128) solid 1px;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.new-form-input > button:hover{
+    background-color: black;
+    border: rgb(0, 0, 0) solid 1px;
+    color: white;
 }
 
 .scheme-creator{
@@ -106,3 +139,47 @@ body{
     width: 100%;
     padding: 5px;
 }
+
+.retrieved-data{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
+}
+
+.universal-data-card{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    white-space: pre-wrap;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.udc-list{
+    list-style: none;
+}
+
+.udc-list > li > span, .curly-bracket-left, .curly-bracket-right{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.key{
+    color: rgb(0, 102, 255);
+}
+
+.value{
+    color: rgb(255, 119, 0);
+}
+
+.curly-bracket-left, .curly-bracket-right{
+    color: rgb(1, 63, 155);
+}
+.collections{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+    padding: 5px;
+}
+

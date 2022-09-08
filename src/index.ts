@@ -25,4 +25,8 @@ app.post('/add/collection',(req:Request,res:Response) => {
     res.json(data)
 })
 
+app.post('/clear',(req:Request,res:Response) => {
+    data = []
+})
+
 app.listen(2000,() => console.log("http://localhost:2000"))

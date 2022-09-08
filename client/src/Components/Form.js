@@ -6,14 +6,12 @@ import Times from './Times'
 import Submit from './Submit'
 import axios from 'axios'
 import CreateCollection from './CreateCollection'
+import ClearServerArray from './ClearServerArray'
 
 const Form = ({loadOnSubmit,value}) => {
     let add = () => {
         let name = prompt("Name of the new field")
         let value = "";
-        if(name.length === null){
-            
-        }
         if(name.length > 0 && fields.filter(e => e[0] === name).length === 0) {
             let arr = [
                 name,
@@ -24,17 +22,40 @@ const Form = ({loadOnSubmit,value}) => {
             alert("Field with that name already exist");
         }
     }
-    let del = (arg) => {
+
+    //works
+    let delField = (arg) => {
         let newData = fields.filter(e => e[0] !== arg);
         setFields(newData);
     }
+
+    let editField = ({index,oldName}) => {
+        //arg is id
+        let newFields = fields;
+        let newFieldName = prompt(`Write new name of the field: ${oldName}`)
+        newFields[index][0] = newFieldName;
+        console.log(newFields[index][0])
+        setFields(newFields);
+    }
+    //works
+    let clearBackend = () => {
+        axios.post("http://localhost:2000/clear")
+        loadOnSubmit(value + 1)
+    }
+
+    //works
     let submit = async () => {
         if(fields.length !== 0){
             let obj = Object.fromEntries(fields);
             await axios.post('http://localhost:2000/add/object',obj)
+            loadOnSubmit(value + 1)
+        } else {
+            alert("You cannot pass anything without declaration of scheme")
         }
-        loadOnSubmit(value++)
     }
+
+    //on change set value for field name 
+    //works
     let setDataInputField = (arg) => {
         let index = fields.map(e => e[0]).indexOf(arg.fieldName);
         let fds = fields;
@@ -45,13 +66,15 @@ const Form = ({loadOnSubmit,value}) => {
 
   return (
     <div className='form'>
-        <div className='add-field' >
-            <CreateScheme add={add} />
+        <div className='options' >
             <CreateCollection />
+            <CreateScheme add={add} />
+            <ClearServerArray clearBackend={clearBackend}/>
             <Submit submit={submit}/>
         </div>
+            
         <div className='fields'>
-            {fields.map(e => <NewFormInput fieldName={e[0]} key={e[0]} del={del} sDIF={setDataInputField}/>)}
+            {fields.map((e,key,index) => <NewFormInput fieldName={e[0]} index={index} key={key} del={delField} edit={editField} sDIF={setDataInputField}/>)}
         </div>
     
     </div>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const CreateCollection = () => {
   return (
-    <button>CreateCollection</button>
+    <button>Create Collection</button>
   )
 }
 
