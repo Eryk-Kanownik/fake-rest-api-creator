@@ -9,7 +9,7 @@ const NewFormInput = ({fieldName,del,sDIF,edit,index}) => {
     <div className='new-form-input'>
         <input type="text" placeholder={fieldName} onChange={(e) => onChange(e.target.value)}/>
         <button onClick={() => del(fieldName)}>Delete</button>
-        <button onClick={() => edit({index,oldName:fieldName})}>Edit</button>
+        <button onClick={() => edit(fieldName)}>Edit</button>
     </div>
     
   )

@@ -1,12 +1,12 @@
 import React from 'react'
 
-const CreateScheme = ({add}) => {
+const AddField = ({add}) => {
 
   return (
     <button onClick={() => add()}>
-      Create Scheme
+      Add Field
     </button>
   )
 }
 
-export default CreateScheme
+export default AddField

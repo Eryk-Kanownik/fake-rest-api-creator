@@ -1,8 +1,8 @@
 import React from 'react'
 
-const CreateCollection = () => {
+const CreateCollection = ({create}) => {
   return (
-    <button>Create Collection</button>
+    <button onClick={() => create()}>Create Collection</button>
   )
 }
 

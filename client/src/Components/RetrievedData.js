@@ -6,7 +6,7 @@ const RetrievedData = ({data}) => {
   return (
     <div>
        <div className='retrieved-data'>
-        {data.map((e,key) => <UniversalDataCard key={key} data={e} />)}
+        {data.map((e,key) => <UniversalDataCard key={e.id} data={e} />)}
       </div>
     </div>
    

@@ -21,7 +21,7 @@ body{
 
 .form{
     display:grid;
-    grid-template-columns: 10vw 90vw;
+    grid-template-columns: 10% 20% 70%;
 }
 
 .options{
@@ -50,13 +50,16 @@ body{
 .fields{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     gap: 5px;
     margin-top: 5px;
 }
 
 .new-form-input{
+    background-color: rgb(238, 238, 238);
+    padding: 5px;
     display: flex;
+    align-self: start;
+    border-radius: 5px;
     gap:5px
 }
 
@@ -142,7 +145,7 @@ body{
 
 .retrieved-data{
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 33% 33% 33% ;
     grid-template-rows: auto;
 }
 
@@ -176,10 +179,28 @@ body{
 .curly-bracket-left, .curly-bracket-right{
     color: rgb(1, 63, 155);
 }
-.collections{
-    display: flex;
-    flex-direction: column;
-    gap:3px;
-    padding: 5px;
+
+.collection-list{
+    padding: 15px;
+    margin: 0;
 }
 
+.collection-list > li > a{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.collection-list > li > a:hover{
+    text-decoration: underline;
+}
+
+.current-collection{
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+    color: red;
+    padding: 3px;
+}
