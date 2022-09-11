@@ -1,13 +1,15 @@
 import React from 'react'
+import CollectionCard from './CollectionCard'
 
 const Collections = ({collections}) => {
     
   return (
-    <ul className='collection-list'>
+    <div className='collection-list'>
+        Collections:
         {
-            collections.map((e) => <li><a href='#'>{e}</a></li>)
+            collections.map((e) => <CollectionCard data={e} />)
         }
-    </ul>
+    </div>
   )
 }
 

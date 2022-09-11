@@ -77,17 +77,21 @@ const Form = () => {
         setFields(fds)
     }
     
-    let createCollection = () => {
+    let createCollection = async () => {
         let name = prompt("Name of the new collection");
         if(name.length === 0){
             return 0;
         }
+        console.log(name)
+        let response = await axios.post('http://localhost:2000/add/collection',{name});
+        console.log(response.data)
         setCollections([...collections,name])
     }
 
   return (
     <div className='form'>
         <div className='options' >
+            Options:
             <CreateCollection create={createCollection}/>
             <AddField add={add} />
             <ClearServerArray clearBackend={clearBackend}/>
@@ -98,7 +102,7 @@ const Form = () => {
             {fields.map((e,index) => <NewFormInput fieldName={e[0]} key={index} del={delField} edit={editField} sDIF={setDataInputField}/>)}
         </div>
         <div>
-            <RetrievedData data={data}/>
+            <RetrievedData data={data} setData={setData}/>
         </div>
     </div>
   )

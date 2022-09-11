@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Navbar = () => {
+const CurrentCollection = ({info}) => {
   return (
     <div className='current-collection'>
-        Collection Has Not been choosen yet
+        {info}
     </div>
   )
 }
 
-export default Navbar
+export default CurrentCollection

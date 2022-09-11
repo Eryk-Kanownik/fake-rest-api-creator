@@ -157,6 +157,32 @@ body{
     padding: 10px;
     margin: 5px;
     font-weight: bold;
+    position: relative;
+}
+
+.universal-data-card > .close{
+    position: absolute;
+    top:0;
+    right: 0;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(155, 155, 155);
+    padding: 10px;
+    transition-duration: 0.2s;
+}
+
+.universal-data-card > .submit{
+    position: absolute;
+    bottom:0;
+    right: 0;
+    cursor: pointer;
+    color: rgb(155, 155, 155);
+    padding: 10px;
+    transition-duration: 0.2s;
+}
+
+.universal-data-card > .close:hover{
+    color: red;
 }
 
 .udc-list{
@@ -181,8 +207,11 @@ body{
 }
 
 .collection-list{
-    padding: 15px;
-    margin: 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+    padding: 0px;
 }
 
 .collection-list > li > a{
@@ -190,6 +219,22 @@ body{
     font-family: 'Source Code Pro', monospace;
     font-size: 20px;
     text-decoration: none;
+}
+
+.collection-card{
+    padding: 4px 10px;
+    font-size: 15px;
+    border: rgb(128, 128, 128) solid 1px;
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.collection-card:hover{
+    background-color: rgb(85, 85, 85);
+    border: rgb(0, 0, 0) solid 1px;
+    color: white;
 }
 
 .collection-list > li > a:hover{
@@ -201,6 +246,5 @@ body{
     font-family: 'Roboto', sans-serif;
     font-family: 'Source Code Pro', monospace;
     text-align: center;
-    color: red;
     padding: 3px;
 }
